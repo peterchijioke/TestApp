@@ -30,7 +30,7 @@ const Home = () => {
             </LinearTextGradient>
             <Text style={{fontSize:18,fontFamily:'SpaceGrotesk-Medium',color:'#999999',lineHeight:25.2,textAlign:'justify'}}>We have sent you a six-digit code on your +18456473215 </Text>
         </View>
-            <View style={{display:'flex',flexDirection:'row',justifyContent:'space-around' ,marginHorizontal:'10%'}}>
+            <View style={{display:'flex',flexDirection:'row',justifyContent:'space-around' ,marginHorizontal:'10%',marginTop:'15%'}}>
             {d.map((_,i)=>(
                     <TextInput value={
                         ()=>{
