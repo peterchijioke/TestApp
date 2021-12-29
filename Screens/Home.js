@@ -20,19 +20,14 @@ const Home = () => {
         style={{flex:1,backgroundColor:'white'}}>
       
         <StatusBar backgroundColor='#ffff' barStyle='dark-content'/>
-       <ScrollView contentContainerStyle={{flexGrow:1}}>
+      
        <TopText/>
-            <Otpinput/>
-        <View>
-        
-        </View>
-
+        <Otpinput/>
         <View style={styles.bottom}>
             <Resend/>
-
            <NextBtn/>
         </View>
-       </ScrollView>
+       
         
         </KeyboardAvoidingView>
        
@@ -44,8 +39,9 @@ export default Home
 
 const styles = StyleSheet.create({
     bottom:{width:'100%',
-    height:'8%',position:'absolute',
+    height:'10%',position:'absolute',
     bottom:0,display:'flex',flexDirection:'row',
-    justifyContent:'space-between'
-    ,alignItems:'center',padding:'5%'}
+    justifyContent:'space-around'
+    ,alignItems:'center'
+,}
 })
