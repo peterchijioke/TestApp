@@ -50,8 +50,6 @@ const Home = () => {
                                     
                                     case 5:
                                         return num5
-                                    
-                            
                             }  
                     } 
                     } 
@@ -87,7 +85,7 @@ const Home = () => {
         
         </View>
 
-        <View style={{width:'100%',backgroundColor:'#133',
+        <View style={{width:'100%',
         height:'8%',position:'absolute',bottom:0,display:'flex',flexDirection:'row',justifyContent:'space-between'
         ,alignItems:'center',padding:'5%'}}>
             <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',}}>
@@ -98,6 +96,7 @@ const Home = () => {
             </View>
 
             <Pressable style={{
+                elevation:4,
                 width:'30%'
                 ,height:49,
                 backgroundColor: '#E6E6E6',
