@@ -1,15 +1,23 @@
-import React from 'react'
-import { StatusBar, StyleSheet, Text, TextInput, View ,KeyboardAvoidingView, Pressable} from 'react-native'
+import React,{useState} from 'react'
+import { StatusBar, StyleSheet, Text, TextInput, View ,KeyboardAvoidingView, Pressable,Platform} from 'react-native'
 import { LinearTextGradient } from "react-native-text-gradient";
 import Arrow from 'react-native-vector-icons/Ionicons'
-import LoadingIcon from 'react-native-vector-icons/Ionicons'
+import LoadingIcon from 'react-native-vector-icons/Feather'
 
 const Home = () => {
     const d=Array(6).fill()
+    const [num,setNum]=useState()
+    const [num1,setNum1]=useState()
+    const [num2,setNum2]=useState()
+    const [num3,setNum3]=useState()
+    const [num4,setNum4]=useState()
+    const [num5,setNum5]=useState()
     return (
-        
-        <View style={{flex:1,backgroundColor:'white'}}>
-            <StatusBar backgroundColor='#ffff' barStyle='dark-content'/>
+        <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
+        style={{flex:1,backgroundColor:'white'}}>
+      
+        <StatusBar backgroundColor='#ffff' barStyle='dark-content'/>
         <View style={{alignItems:'center',justifyContent: 'center',}}>   
              <LinearTextGradient
             style={{ fontSize: 30,fontFamily:'SpaceGrotesk-Bold',lineHeight:42}}
@@ -23,18 +31,49 @@ const Home = () => {
             <Text style={{fontSize:18,fontFamily:'SpaceGrotesk-Medium',color:'#999999',lineHeight:25.2,textAlign:'justify'}}>We have sent you a six-digit code on your +18456473215 </Text>
         </View>
             <View style={{display:'flex',flexDirection:'row',justifyContent:'space-around' ,marginHorizontal:'10%'}}>
-            {d.map(()=>(
-                    <TextInput style={{borderBottomColor:'#333333',borderBottomWidth:0.5,width:'10%'}} keyboardType='number-pad' maxLength={1} onChangeText={()=>{}}/>  
+            {d.map((_,i)=>(
+                    <TextInput value={num
+                    } 
+                    style={{borderBottomColor:'#333333',color:'#000',
+                    borderBottomWidth:0.5,width:'10%'}} keyboardType='number-pad' 
+                    maxLength={1} 
+                    
+                    onChangeText={(text)=>{
+                        switch (i) {
+                            case 0:
+                                setNum(text)
+                                break;
+                                case 1:
+                                setNum1(text)
+                                break;
+                                case 2:
+                                setNum2(text)
+                                break;
+                                case 3:
+                                setNum3(text)
+                                break;
+                                case 4:
+                                setNum4(text)
+                                break;
+                                case 5:
+                                setNum5(text)
+                                break;
+                        
+                        }
+                    }}/>  
             ))}
             </View>
         <View>
         
         </View>
 
-        <View style={{width:'100%',backgroundColor:'#133',height:'8%',position:'absolute',bottom:0,display:'flex',flexDirection:'row'}}>
-            <View style={{display:'flex',flexDirection:'row'}}>
-                <Text>
-
+        <View style={{width:'100%',backgroundColor:'#133',
+        height:'8%',position:'absolute',bottom:0,display:'flex',flexDirection:'row',justifyContent:'space-between'
+        ,alignItems:'center',padding:'5%'}}>
+            <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',}}>
+                <LoadingIcon name='rotate-ccw' size={20} color='#999999'/>
+                <Text style={{color:'#999999',fontFamily:'SpaceGrotesk-Bold',paddingLeft:'5%'}}>
+                Resend Code in 30s
                 </Text>
             </View>
 
@@ -43,16 +82,19 @@ const Home = () => {
                 ,height:49,
                 backgroundColor: '#E6E6E6',
                 borderRadius: 32,
-                display:'flex',flexDirection:'row'
+                display:'flex',flexDirection:'row',justifyContent:'center',
+               
+                alignItems:'center'
             }}>
-                <Text style={{color:'#999999',fontFamily:'SpaceGrotesk-Bold'}}>
+                <Text style={{color:'#999999',fontFamily:'SpaceGrotesk-Bold', marginEnd:'3%',}}>
                     Next
                 </Text>
-                <Arrow name='' color='#999999'/>
+                <Arrow name='md-arrow-forward-sharp' size={20} color='#999999'/>
                 
             </Pressable>
         </View>
-        </View>
+        
+        </KeyboardAvoidingView>
        
     )
 }
