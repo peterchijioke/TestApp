@@ -31,14 +31,24 @@ const Home = () => {
         
         </View>
 
-        <View style={{width:'100%',backgroundColor:'#133',height:'8%',position:'absolute',bottom:0}}>
+        <View style={{width:'100%',backgroundColor:'#133',height:'8%',position:'absolute',bottom:0,display:'flex',flexDirection:'row'}}>
+            <View style={{display:'flex',flexDirection:'row'}}>
+                <Text>
+
+                </Text>
+            </View>
 
             <Pressable style={{
                 width:'30%'
                 ,height:49,
                 backgroundColor: '#E6E6E6',
                 borderRadius: 32,
+                display:'flex',flexDirection:'row'
             }}>
+                <Text style={{color:'#999999',fontFamily:'SpaceGrotesk-Bold'}}>
+                    Next
+                </Text>
+                <Arrow name='' color='#999999'/>
                 
             </Pressable>
         </View>
