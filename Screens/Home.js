@@ -32,12 +32,32 @@ const Home = () => {
         </View>
             <View style={{display:'flex',flexDirection:'row',justifyContent:'space-around' ,marginHorizontal:'10%'}}>
             {d.map((_,i)=>(
-                    <TextInput value={num
+                    <TextInput value={
+                        ()=>{
+                            switch (i) {
+                                case 0:
+                                    return num
+                                    case 1:
+                                        return num1
+                                    case 2:
+                                        return num2
+                                  
+                                    case 3:
+                                        return num3
+                                   
+                                    case 4:
+                                        return num4
+                                    
+                                    case 5:
+                                        return num5
+                                    
+                            
+                            }  
+                    } 
                     } 
                     style={{borderBottomColor:'#333333',color:'#000',
                     borderBottomWidth:0.5,width:'10%'}} keyboardType='number-pad' 
                     maxLength={1} 
-                    
                     onChangeText={(text)=>{
                         switch (i) {
                             case 0:
