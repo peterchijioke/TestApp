@@ -16,11 +16,9 @@ const Home = () => {
     return (
       
         <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={{flex:1,backgroundColor:'white'}}>
-      
         <StatusBar backgroundColor='#ffff' barStyle='dark-content'/>
-      
        <TopText/>
         <Otpinput/>
         <View style={styles.bottom}>
