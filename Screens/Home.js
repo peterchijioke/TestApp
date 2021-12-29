@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
-import { StatusBar, StyleSheet, Text, TextInput, View ,KeyboardAvoidingView, Pressable,Platform} from 'react-native'
+import { StatusBar, StyleSheet, Text, TextInput, View ,KeyboardAvoidingView, Pressable,Platform, ScrollView} from 'react-native'
 import { LinearTextGradient } from "react-native-text-gradient";
+
 import Arrow from 'react-native-vector-icons/Ionicons'
 import LoadingIcon from 'react-native-vector-icons/Feather'
 
@@ -13,12 +14,14 @@ const Home = () => {
     const [num4,setNum4]=useState()
     const [num5,setNum5]=useState()
     return (
+      
         <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
         style={{flex:1,backgroundColor:'white'}}>
       
         <StatusBar backgroundColor='#ffff' barStyle='dark-content'/>
-        <View style={{alignItems:'center',justifyContent: 'center',}}>   
+       <ScrollView contentContainerStyle={{flexGrow:1}}>
+       <View style={{alignItems:'center',justifyContent: 'center',}}>   
              <LinearTextGradient
             style={{ fontSize: 30,fontFamily:'SpaceGrotesk-Bold',lineHeight:42}}
             locations={[0, 1]}
@@ -26,9 +29,10 @@ const Home = () => {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             >
-                <Text style={{}}>Enter the verification code sent to you</Text>
+                <Text style={{ textAlign:'justify'}}>Enter the verification code sent to you</Text>
             </LinearTextGradient>
-            <Text style={{fontSize:18,fontFamily:'SpaceGrotesk-Medium',color:'#999999',lineHeight:25.2,textAlign:'justify'}}>We have sent you a six-digit code on your +18456473215 </Text>
+            <Text style={{fontSize:18,fontFamily:'SpaceGrotesk-Medium',color:'#999999',
+            lineHeight:25.2,textAlign:'justify'}}>We have sent you a six-digit code on your +18456473215 </Text>
         </View>
             <View style={{display:'flex',flexDirection:'row',justifyContent:'space-around' ,marginHorizontal:'10%',marginTop:'15%'}}>
             {d.map((_,i)=>(
@@ -112,8 +116,10 @@ const Home = () => {
                 
             </Pressable>
         </View>
+       </ScrollView>
         
         </KeyboardAvoidingView>
+       
        
     )
 }
