@@ -18,7 +18,6 @@ const App = ({navigation}) => {
         headerTintColor: '#000',
         headerLeft: () => (
           <Icon.Button
-          
             name="arrow-back"
             size={25}
             style={{borderRadius:25,borderWidth:0.5,borderColor:'#E6E6E6'}}
