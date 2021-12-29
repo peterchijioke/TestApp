@@ -1,6 +1,8 @@
 import React from 'react'
 import { StatusBar, StyleSheet, Text, TextInput, View ,KeyboardAvoidingView, Pressable} from 'react-native'
 import { LinearTextGradient } from "react-native-text-gradient";
+import Arrow from 'react-native-vector-icons/Ionicons'
+import LoadingIcon from 'react-native-vector-icons/Ionicons'
 
 const Home = () => {
     const d=Array(6).fill()
