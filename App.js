@@ -14,13 +14,14 @@ const App = ({navigation}) => {
       <Stack.Navigator>
       <Stack.Screen name="Home" component={Home}
        options={{
-        headerTitle: '',
+        title: '',
         headerTintColor: '#000',
         headerLeft: () => (
           <Icon.Button
+          
             name="arrow-back"
             size={25}
-            style={{}}
+            style={{borderRadius:25,borderWidth:0.5,borderColor:'#E6E6E6'}}
             backgroundColor="#fff"
             color="#000"
             onPress={() => console.log("Go back")}
